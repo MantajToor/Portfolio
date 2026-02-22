@@ -1,19 +1,16 @@
-// Global type definitions for the portfolio
-
 export interface Project {
   id: string;
   title: string;
   description: string;
-  image: string;
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
+  featured?: boolean;
 }
 
-export interface Skill {
+export interface SkillCategory {
   name: string;
-  level: "beginner" | "intermediate" | "advanced" | "expert";
-  category: "frontend" | "backend" | "tools" | "other";
+  skills: { name: string; level: number }[];
 }
 
 export interface Experience {
@@ -27,3 +24,24 @@ export interface Experience {
   technologies: string[];
 }
 
+export interface Education {
+  id: string;
+  degree: string;
+  school: string;
+  location: string;
+  startDate: string;
+  endDate?: string;
+  gpa?: string;
+  coursework: string[];
+  honors?: string[];
+}
+
+export interface SocialLink {
+  name: string;
+  url: string;
+}
+
+export interface NavItem {
+  name: string;
+  href: string;
+}

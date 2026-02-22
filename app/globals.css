@@ -1,26 +1,173 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: #0c0a1a;
+  --color-surface: #161432;
+  --color-card: #1e1b42;
+  --color-gold: #ffcf40;
+  --color-emerald: #3ddc84;
+  --color-crimson: #ff4d6a;
+  --color-mana: #7c6cff;
+  --color-frost: #64d8e8;
+  --color-text-primary: #ede8f5;
+  --color-text-muted: #7a7499;
+  --color-border: #2d2858;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-press-start);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2d2858 #0c0a1a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0c0a1a;
+  color: #ede8f5;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(255, 207, 64, 0.3);
+  color: #fff;
+}
+
+/* ── Scanlines overlay ── */
+
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.04) 2px,
+    rgba(0, 0, 0, 0.04) 4px
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ── RPG panel (dialog-box style) ── */
+
+.rpg-panel {
+  background: #1e1b42;
+  border: 3px solid #ffcf40;
+  box-shadow:
+    inset 0 0 0 2px #1e1b42,
+    inset 0 0 0 4px rgba(255, 207, 64, 0.2),
+    6px 6px 0 0 rgba(0, 0, 0, 0.4);
+}
+
+.rpg-panel-muted {
+  background: #1e1b42;
+  border: 3px solid #2d2858;
+  box-shadow:
+    inset 0 0 0 2px #1e1b42,
+    inset 0 0 0 4px rgba(45, 40, 88, 0.3),
+    4px 4px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+/* ── Pixel button base ── */
+
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-press-start);
+  font-size: 0.65rem;
+  line-height: 1.5;
+  border: 3px solid #0c0a1a;
+  box-shadow: 4px 4px 0 0 #0c0a1a;
+  transition: all 0.08s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pixel-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #0c0a1a;
+}
+
+.pixel-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 0 #0c0a1a;
+}
+
+.pixel-btn-primary {
+  background: #ffcf40;
+  color: #0c0a1a;
+}
+
+.pixel-btn-secondary {
+  background: transparent;
+  color: #ffcf40;
+  border-color: #ffcf40;
+  box-shadow: 4px 4px 0 0 rgba(255, 207, 64, 0.35);
+}
+
+.pixel-btn-secondary:hover {
+  box-shadow: 2px 2px 0 0 rgba(255, 207, 64, 0.35);
+  background: rgba(255, 207, 64, 0.05);
+}
+
+.pixel-btn-secondary:active {
+  box-shadow: 0 0 0 0 rgba(255, 207, 64, 0.35);
+}
+
+/* ── Segmented XP bar ── */
+
+.xp-bar-fill {
+  background: repeating-linear-gradient(
+    90deg,
+    #3ddc84 0px,
+    #3ddc84 8px,
+    transparent 8px,
+    transparent 10px
+  );
+}
+
+/* ── Pixel shadow for cards ── */
+
+.pixel-shadow {
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+/* ── Blink animation (RPG cursor) ── */
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ── Float animation for decorative elements ── */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
 }
