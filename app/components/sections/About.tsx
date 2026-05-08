@@ -1,34 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import SectionHeading from "@/app/components/ui/SectionHeading";
-import { personalInfo, stats } from "@/lib/constants";
+import { personalInfo } from "@/lib/constants";
 
 export default function About() {
   return (
     <section id="about" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading number="// 01" title="Character Profile" />
+        <SectionHeading number="// 01" title="About Me" />
 
         {/* Top row: portrait + bio */}
         <div className="grid md:grid-cols-[240px_1fr] gap-8 mb-10">
           {/* Profile picture area */}
           <div>
-            <div className="rpg-panel p-2 aspect-square flex items-center justify-center">
-              {/*
-                Replace the placeholder below with your own <Image> or <img>.
-                Example:
-                  <Image src="/me.jpg" alt="Portrait" width={220} height={220}
-                         className="w-full h-full object-cover" />
-              */}
-              <div className="w-full h-full bg-surface flex flex-col items-center justify-center gap-3">
-                <span className="font-pixel text-[10px] text-text-muted text-center leading-relaxed">
-                  Your
-                  <br />
-                  Photo
-                  <br />
-                  Here
-                </span>
-              </div>
+            <div className="rpg-panel aspect-square relative overflow-hidden">
+              <Image
+                src="/LinkedinHeadshot.png"
+                alt="Portrait"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Mini stat line */}
@@ -45,7 +37,7 @@ export default function About() {
           {/* Bio text */}
           <div className="rpg-panel-muted p-6 flex flex-col justify-center">
             <p className="font-pixel text-[9px] text-gold mb-3 uppercase tracking-wider">
-              Bio
+              Overview
             </p>
             <p className="text-text-muted leading-relaxed mb-4">
               {personalInfo.about}
@@ -61,7 +53,7 @@ export default function About() {
         <div className="mb-10">
           <div className="rpg-panel-muted p-4">
             <p className="font-pixel text-[9px] text-gold mb-3 uppercase tracking-wider px-2 pt-1">
-              World Map
+              Location
             </p>
 
             {/*
@@ -92,21 +84,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Stat blocks */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="rpg-panel-muted p-4 text-center hover:border-gold/40 transition-colors"
-            >
-              <div className="text-2xl mb-1">{s.icon}</div>
-              <div className="font-pixel text-sm text-gold">{s.value}</div>
-              <div className="font-pixel text-[8px] text-text-muted mt-1 uppercase">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

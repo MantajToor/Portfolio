@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading number="// 03" title="Quest Board" />
+        <SectionHeading number="// 03" title="Projects" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
@@ -18,7 +18,7 @@ export default function Projects() {
                 {/* Quest status badge */}
                 {project.featured && (
                   <span className="inline-block w-fit font-pixel text-[7px] text-gold mb-3 uppercase tracking-widest">
-                    ★ LEGENDARY QUEST
+                    ★ FEATURED
                   </span>
                 )}
 
@@ -60,7 +60,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="font-pixel text-[7px] text-text-muted hover:text-gold transition-colors"
                     >
-                      [ PLAY ]
+                      [ LIVE DEMO ]
                     </a>
                   )}
                 </div>

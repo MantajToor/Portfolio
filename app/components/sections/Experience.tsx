@@ -5,7 +5,7 @@ export default function Experience() {
   return (
     <section id="experience" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading number="// 04" title="Adventure Log" />
+        <SectionHeading number="// 04" title="Experience" />
 
         <div className="relative">
           {/* Timeline line */}
@@ -69,7 +69,7 @@ export default function Experience() {
             <div className="relative pl-10 md:pl-16">
               <div className="absolute left-3 md:left-6 top-0 w-2 h-2 -translate-x-1/2 rotate-45 bg-text-muted/30" />
               <p className="font-pixel text-[8px] text-text-muted pt-1">
-                ... more adventures await
+                ... more to come
               </p>
             </div>
           </div>

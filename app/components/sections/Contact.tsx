@@ -21,11 +21,11 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 px-6">
       <div className="max-w-3xl mx-auto">
-        <SectionHeading number="// 06" title="Message Guild" align="center" />
+        <SectionHeading number="// 06" title="Get In Touch" align="center" />
 
         <div className="rpg-panel p-6 md:p-8 mb-10">
           <p className="font-pixel text-[8px] text-gold mb-6 text-center uppercase tracking-wider">
-            Write your message below
+            Send me a message
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -73,7 +73,7 @@ export default function Contact() {
             </div>
 
             <div className="text-center pt-2">
-              <PixelButton>▶ SEND SCROLL</PixelButton>
+              <PixelButton>▶ SEND MESSAGE</PixelButton>
             </div>
           </form>
         </div>

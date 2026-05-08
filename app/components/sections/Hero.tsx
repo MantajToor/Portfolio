@@ -71,7 +71,7 @@ export default function Hero() {
 
         {/* CTA menu */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <PixelButton href="#projects">▶ VIEW QUESTS</PixelButton>
+          <PixelButton href="#projects">▶ VIEW PROJECTS</PixelButton>
           <PixelButton href="#contact" variant="secondary">
             ▶ SEND MESSAGE
           </PixelButton>

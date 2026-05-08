@@ -21,7 +21,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading number="// 02" title="Skill Tree" />
+        <SectionHeading number="// 02" title="Technical Skills" />
 
         <div className="grid md:grid-cols-2 gap-6">
           {skillCategories.map((cat) => (

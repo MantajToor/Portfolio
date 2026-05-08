@@ -5,7 +5,7 @@ export default function Education() {
   return (
     <section id="education" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionHeading number="// 05" title="Training Grounds" />
+        <SectionHeading number="// 05" title="Education" />
 
         <div className="space-y-8">
           {education.map((edu) => (
@@ -40,7 +40,7 @@ export default function Education() {
               {edu.honors && edu.honors.length > 0 && (
                 <div className="mb-6">
                   <p className="font-pixel text-[8px] text-gold mb-3 uppercase tracking-wider">
-                    ★ Achievements Unlocked
+                    ★ Honors & Awards
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {edu.honors.map((h) => (
@@ -58,7 +58,7 @@ export default function Education() {
               {/* Coursework */}
               <div>
                 <p className="font-pixel text-[8px] text-frost mb-3 uppercase tracking-wider">
-                  Skill Training
+                  Relevant Coursework
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                   {edu.coursework.map((c) => (

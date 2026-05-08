@@ -8,7 +8,7 @@ import type {
 } from "@/types";
 
 /* ─────────────────────────────────────────────
-   Personal Info  — replace with your own!
+   Personal Info
    ───────────────────────────────────────────── */
 
 export const personalInfo = {
@@ -25,20 +25,19 @@ export const personalInfo = {
 
 export const navItems: NavItem[] = [
   { name: "Home", href: "#home" },
-  { name: "Profile", href: "#about" },
+  { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
-  { name: "Quests", href: "#projects" },
-  { name: "Log", href: "#experience" },
-  { name: "Training", href: "#education" },
-  { name: "Message", href: "#contact" },
+  { name: "Projects", href: "#projects" },
+  { name: "Experience", href: "#experience" },
+  { name: "Education", href: "#education" },
+  { name: "Contact", href: "#contact" },
 ];
 
 /* ── Social Links ── */
 
 export const socialLinks: SocialLink[] = [
-  { name: "GitHub", url: "https://github.com/yourusername" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/yourusername" },
-  { name: "Twitter", url: "https://x.com/yourusername" },
+  { name: "GitHub", url: "https://github.com/MantajToor" },
+  { name: "LinkedIn", url: "https://linkedin.com/in/mantaj-toor" },
 ];
 
 /* ── Stats (shown in About) ── */
@@ -56,42 +55,45 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
     skills: [
-      { name: "TypeScript", level: 90 },
       { name: "Python", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C++", level: 70 },
-      { name: "SQL", level: 75 },
-      { name: "Rust", level: 50 },
+      { name: "JavaScript", level: 80 },
+      { name: "C/C++", level: 75 },
+      { name: "SQL", level: 70 },
+      { name: "Java", level: 70 },
+      { name: "PHP", level: 65 },
+      { name: "Haskell", level: 55 },
     ],
   },
   {
     name: "Frameworks & Libraries",
     skills: [
-      { name: "React / Next.js", level: 90 },
-      { name: "Node.js", level: 80 },
+      { name: "React", level: 80 },
+      { name: "Node.js", level: 75 },
       { name: "Express", level: 75 },
-      { name: "Tailwind CSS", level: 90 },
-      { name: "Spring Boot", level: 60 },
+      { name: "Flask", level: 75 },
+      { name: "FastAPI", level: 65 },
+      { name: "Playwright", level: 65 },
     ],
   },
   {
-    name: "Tools & Platforms",
+    name: "Developer Tools",
     skills: [
-      { name: "Git / GitHub", level: 90 },
+      { name: "Git / GitHub", level: 85 },
       { name: "Docker", level: 70 },
-      { name: "AWS", level: 60 },
-      { name: "Linux", level: 75 },
-      { name: "PostgreSQL", level: 70 },
+      { name: "MySQL", level: 70 },
+      { name: "OpenAI API", level: 70 },
+      { name: "GitHub Actions", level: 70 },
+      { name: "Apache HTTP Server", level: 60 },
     ],
   },
   {
     name: "Concepts",
     skills: [
-      { name: "DSA", level: 85 },
-      { name: "System Design", level: 65 },
       { name: "REST APIs", level: 85 },
-      { name: "CI / CD", level: 70 },
-      { name: "Agile / Scrum", level: 75 },
+      { name: "CI / CD", level: 75 },
+      { name: "Unit & E2E Testing", level: 80 },
+      { name: "Data Structures & Algorithms", level: 80 },
+      { name: "Software Architecture", level: 70 },
     ],
   },
 ];
@@ -101,57 +103,38 @@ export const skillCategories: SkillCategory[] = [
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Cloud Task Manager",
+    title: "Library Management System",
     description:
-      "Full-stack task management app with real-time collaboration, drag-and-drop boards, auth, and team workspaces.",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "WebSocket", "Tailwind"],
-    githubUrl: "https://github.com/yourusername/task-manager",
-    liveUrl: "https://taskmanager.example.com",
+      "REST API with full business logic for catalog management, patron operations, and late fee processing. Includes complete unit and E2E test suites with 80%+ code coverage and automated CI/CD via GitHub Actions.",
+    technologies: ["Python", "Flask", "Pytest", "Playwright", "Docker", "GitHub Actions"],
+    githubUrl: "https://github.com/MantajToor",
     featured: true,
   },
   {
     id: "2",
-    title: "ML Image Classifier",
+    title: "The Living Journal — QHacks 2025",
     description:
-      "Deep learning image classification model trained on custom datasets with a web UI for uploading and classifying images (94% accuracy).",
-    technologies: ["Python", "PyTorch", "Flask", "React", "Docker"],
-    githubUrl: "https://github.com/yourusername/ml-classifier",
+      "Hackathon project combining a journal-saving feature with AI-powered sentiment analysis. Built with a Node/Express backend, OpenAI API integration, and a responsive React UI with animations.",
+    technologies: ["Flask", "React", "JavaScript", "Node.js", "Express", "OpenAI API"],
+    githubUrl: "https://github.com/MantajToor",
     featured: true,
   },
   {
     id: "3",
-    title: "Algorithm Visualizer",
+    title: "Solar Energy Forecasting Software",
     description:
-      "Interactive visualizations for sorting, pathfinding, and graph algorithms — built to help students learn through animation.",
-    technologies: ["React", "TypeScript", "D3.js", "Framer Motion"],
-    githubUrl: "https://github.com/yourusername/algo-visualizer",
-    liveUrl: "https://algoviz.example.com",
+      "C++ forecasting tool delivering 7-day solar energy estimates for Canadian cities. Features a custom Linear Regression model with batch gradient descent, a live data pipeline, and a Chart.js dashboard.",
+    technologies: ["C++", "Chart.js", "HTTP APIs", "Linear Regression"],
+    githubUrl: "https://github.com/MantajToor",
     featured: true,
   },
   {
     id: "4",
-    title: "Distributed Chat System",
+    title: "Conference Management Web App",
     description:
-      "Peer-to-peer encrypted chat application with group chats, file sharing, and end-to-end encryption over a distributed architecture.",
-    technologies: ["Go", "gRPC", "React", "WebRTC", "Redis"],
-    githubUrl: "https://github.com/yourusername/distributed-chat",
-  },
-  {
-    id: "5",
-    title: "Portfolio Website",
-    description:
-      "This website! A retro RPG-themed portfolio with pixel art styling, quest-board projects, and character-sheet about page.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/yourusername/portfolio",
-    liveUrl: "#",
-  },
-  {
-    id: "6",
-    title: "Budget Tracker API",
-    description:
-      "RESTful API for personal finance tracking with expense categorization, budget alerts, spending analytics, and full test coverage.",
-    technologies: ["Node.js", "Express", "MongoDB", "Jest", "Swagger"],
-    githubUrl: "https://github.com/yourusername/budget-api",
+      "PHP/MySQL CRUD application for managing conference attendees, sponsors, and sessions. Designed from an ER diagram with foreign keys, indexes, PDO, server-side validation, and a full navbar UI.",
+    technologies: ["PHP", "MySQL", "Apache", "HTML", "CSS"],
+    githubUrl: "https://github.com/MantajToor",
   },
 ];
 
@@ -160,46 +143,45 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     id: "1",
-    title: "Software Engineering Intern",
-    company: "Tech Company",
-    location: "San Francisco, CA",
-    startDate: "Jun 2025",
-    endDate: "Aug 2025",
+    title: "Full Stack Developer",
+    company: "Queen's Solar Design Team",
+    location: "Kingston, ON",
+    startDate: "Sep 2025",
+    endDate: undefined,
     description: [
-      "Shipped 3 new customer-facing dashboard features, increasing user engagement by 15%",
-      "Optimized database queries, reducing API response times by 40%",
-      "Collaborated with a cross-functional team of 8 engineers in an Agile environment",
-      "Wrote comprehensive unit and integration tests achieving 90% code coverage",
+      "Built a C++ solar energy generation forecasting software serving 7-day forecasts for Canadian cities",
+      "Integrated data pipeline that fetches 720 historical hours + 168 forecast hours across 2 HTTP calls per request",
+      "Implemented a from-scratch Linear Regression model using batch gradient descent with cyclic hour features, returning model R² and solar energy estimates in the API response",
+      "Delivered a Chart.js dashboard with client-side controls (panel area/efficiency) that recompute 7-day kWh totals with zero additional API calls",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+    technologies: ["C++", "Chart.js", "HTTP APIs", "Linear Regression"],
   },
   {
     id: "2",
-    title: "Undergraduate Research Assistant",
-    company: "University CS Department",
-    location: "City, State",
-    startDate: "Jan 2025",
-    endDate: "May 2025",
+    title: "Operations Intern",
+    company: "Mondelez International",
+    location: "Brampton, ON",
+    startDate: "May 2024",
+    endDate: "Aug 2024",
     description: [
-      "Researched novel approaches to graph neural networks for social network analysis",
-      "Implemented and benchmarked 5 GNN architectures using PyTorch Geometric",
-      "Co-authored a paper submitted to a top-tier ML conference",
+      "Managed orders for Amazon and national retailers; verified SKUs and met daily productivity targets",
+      "Coordinated tasks for new hires during peak shifts; provided training to maintain 100% shipment accuracy",
     ],
-    technologies: ["Python", "PyTorch", "LaTeX", "Jupyter"],
+    technologies: ["Microsoft Office Suite"],
   },
   {
     id: "3",
-    title: "Teaching Assistant — Data Structures",
-    company: "University CS Department",
-    location: "City, State",
-    startDate: "Aug 2024",
-    endDate: "Dec 2024",
+    title: "Member",
+    company: "Queen's Cryptography Club",
+    location: "Kingston, ON",
+    startDate: "Sep 2025",
+    endDate: undefined,
     description: [
-      "Led weekly lab sessions for 30+ students covering trees, graphs, and hash tables",
-      "Held office hours and graded assignments with detailed feedback",
-      "Created supplementary study materials that improved average exam scores by 12%",
+      "Participated in Capture The Flag competitions to find and exploit security vulnerabilities",
+      "Attended weekly meetings to discuss CTF write-ups with peers",
+      "Collaborated with an 8-member team to analyze vulnerabilities, exchange tactics, and mentor new members on reverse engineering tools",
     ],
-    technologies: ["Java", "Python"],
+    technologies: ["CTF", "Reverse Engineering", "Security"],
   },
 ];
 
@@ -208,22 +190,23 @@ export const experiences: Experience[] = [
 export const education: Education[] = [
   {
     id: "1",
-    degree: "Bachelor of Science in Computer Science",
-    school: "Your University",
-    location: "City, State",
-    startDate: "Aug 2022",
-    endDate: "May 2026 (Expected)",
-    gpa: "3.8 / 4.0",
+    degree: "Bachelor of Computing Honours",
+    school: "Queen's University",
+    location: "Kingston, ON",
+    startDate: "Sep 2023",
+    endDate: "Apr 2027",
+    gpa: "3.45 / 4.0",
     coursework: [
-      "Data Structures & Algorithms",
+      "Data Structures",
+      "Algorithms",
+      "Database Management Systems",
       "Operating Systems",
-      "Computer Networks",
-      "Database Systems",
-      "Machine Learning",
-      "Software Engineering",
-      "Computer Architecture",
-      "Discrete Mathematics",
+      "Software Architecture",
+      "Software Quality Assurance",
+      "Artificial Intelligence",
+      "Programming Paradigms",
+      "Software Specifications",
     ],
-    honors: ["Dean's List (All Semesters)", "CS Department Scholarship"],
+    honors: [],
   },
 ];
