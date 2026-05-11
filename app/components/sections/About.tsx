@@ -1,8 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import SectionHeading from "@/app/components/ui/SectionHeading";
 import { personalInfo } from "@/lib/constants";
+
+const Globe = dynamic(() => import("@/app/components/ui/Globe"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-[400px] flex items-center justify-center">
+      <span className="font-pixel text-[9px] text-text-muted animate-pulse">
+        [ Loading Globe... ]
+      </span>
+    </div>
+  ),
+});
 
 export default function About() {
   return (
@@ -52,34 +64,24 @@ export default function About() {
         {/* Three.js Globe area */}
         <div className="mb-10">
           <div className="rpg-panel-muted p-4">
-            <p className="font-pixel text-[9px] text-gold mb-3 uppercase tracking-wider px-2 pt-1">
+            <p className="font-pixel text-[9px] text-gold mb-1 uppercase tracking-wider px-2 pt-1">
               Location
             </p>
+            <p className="font-pixel text-[7px] text-text-muted px-2 mb-3">
+              Toronto, ON — drag to explore
+            </p>
 
-            {/*
-              ── THREE.JS GLOBE PLACEHOLDER ──
-              This div is your canvas for a Three.js globe.
-              It's already inside a "use client" component.
-
-              Quick start:
-              1. Create a <Globe /> component using @react-three/fiber + @react-three/drei
-              2. Import it here and drop it inside the div below
-              3. The container is set to 400px tall — adjust as needed
-
-              Example:
-                import Globe from "@/app/components/Globe";
-                ...
+            {/* Constrain to a centred square-ish area so it doesn't stretch to a thin disc */}
+            <div className="flex justify-center">
+              <div id="globe-container" className="relative w-full max-w-md h-[380px]">
                 <Globe />
-            */}
-            <div
-              id="globe-container"
-              className="w-full h-[400px] bg-surface/50 flex items-center justify-center border-2 border-dashed border-border"
-            >
-              <span className="font-pixel text-[9px] text-text-muted text-center leading-loose">
-                [ Three.js Globe ]
-                <br />
-                Replace this placeholder
-              </span>
+                {/* Toronto label */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none">
+                  <span className="font-pixel text-[8px] text-gold/80 tracking-widest">
+                    📍 TORONTO, ON
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

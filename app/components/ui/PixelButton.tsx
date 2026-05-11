@@ -5,6 +5,8 @@ interface PixelButtonProps {
   href?: string;
   variant?: "primary" | "secondary";
   className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function PixelButton({
@@ -12,10 +14,13 @@ export default function PixelButton({
   href,
   variant = "primary",
   className,
+  type = "button",
+  disabled,
 }: PixelButtonProps) {
   const classes = cn(
     "pixel-btn",
     variant === "primary" ? "pixel-btn-primary" : "pixel-btn-secondary",
+    disabled && "opacity-50 cursor-not-allowed",
     className,
   );
 
@@ -32,6 +37,10 @@ export default function PixelButton({
     );
   }
 
-  return <button className={classes}>{children}</button>;
+  return (
+    <button type={type} disabled={disabled} className={classes}>
+      {children}
+    </button>
+  );
 }
 
