@@ -19,7 +19,7 @@ const pressStart = Press_Start_2P({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name | Portfolio",
+  title: "Mantaj Toor | Portfolio",
   description:
     "Computer Science student & developer — projects, skills, and experience.",
 };

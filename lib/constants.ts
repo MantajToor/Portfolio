@@ -37,7 +37,7 @@ export const navItems: NavItem[] = [
 
 export const socialLinks: SocialLink[] = [
   { name: "GitHub", url: "https://github.com/MantajToor" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/mantaj-toor" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/mantaj-toor-677092278/" },
 ];
 
 /* ── Stats (shown in About) ── */
